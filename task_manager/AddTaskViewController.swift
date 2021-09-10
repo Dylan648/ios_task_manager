@@ -8,22 +8,29 @@
 import UIKit
 
 class AddTaskViewController: UIViewController {
+    
+    var mvc:ViewController?
 
+    @IBOutlet weak var taskInput: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.hideKeyboardWhenTappedAround()
         // Do any additional setup after loading the view.
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func addTaskButtonPressed(_ sender: Any) {
+        
+        
+        self.dismiss(animated: true, completion: nil)
+        
     }
-    */
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if segue.destination is ViewController {
+            let vc = segue.destination as? ViewController
+            vc?.dailyTaskBox.text = taskInput.text
+        }
+    }
+    
 }

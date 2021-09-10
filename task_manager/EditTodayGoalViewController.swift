@@ -8,22 +8,21 @@
 import UIKit
 
 class EditTodayGoalViewController: UIViewController {
-
+    @IBOutlet weak var inputText: UITextField!
+    var vc1 = ViewController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func changeTextButtonClicked(_ sender: Any) {
+        
+        vc1.mainTaskTextView.text = inputText.text
+        
     }
-    */
-
+    
+    
 }

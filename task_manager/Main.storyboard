@@ -16,30 +16,112 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today's Goal:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c0C-vS-CQH">
-                                <rect key="frame" x="72" y="71" width="246" height="52"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="43"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today's Goal:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c0C-vS-CQH">
+                                <rect key="frame" x="72" y="71" width="246" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" keyboardDismissMode="onDrag" text="Default Text" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hD7-qG-5V1">
-                                <rect key="frame" x="75" y="153" width="240" height="128"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="yr4-Dh-Cad">
+                                <rect key="frame" x="46" y="149" width="298" height="128"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" text="Default Text" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hD7-qG-5V1">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                        <color key="backgroundColor" red="0.9376409471649485" green="0.80701130399156773" blue="0.54515820554527206" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dfa-YU-KUY">
+                                        <rect key="frame" x="250" y="0.0" width="48" height="128"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cPj-2u-KGt">
+                                                <rect key="frame" x="0.0" y="0.0" width="48" height="37.333333333333336"/>
+                                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <state key="normal" title="Fin">
+                                                    <color key="titleColor" systemColor="labelColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="finButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zmk-0l-EM6"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wp6-WM-1ax">
+                                                <rect key="frame" x="0.0" y="45.333333333333343" width="48" height="37.333333333333343"/>
+                                                <color key="backgroundColor" red="1" green="0.99224091800900205" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Almost">
+                                                    <color key="titleColor" systemColor="labelColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="almostButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vNy-HQ-ttt"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sRU-tT-hm0">
+                                                <rect key="frame" x="0.0" y="90.666666666666657" width="48" height="37.333333333333343"/>
+                                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                                <state key="normal" title="DNF">
+                                                    <color key="titleColor" systemColor="labelColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="dnfButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="U7w-RA-bVt"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="hD7-qG-5V1" firstAttribute="leading" secondItem="yr4-Dh-Cad" secondAttribute="leading" id="hRh-bv-JMu"/>
+                                    <constraint firstItem="dfa-YU-KUY" firstAttribute="leading" secondItem="hD7-qG-5V1" secondAttribute="trailing" constant="10" id="s7r-OR-9Cf"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daily Goals:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cqX-m8-5Wu">
+                                <rect key="frame" x="105" y="339" width="203" height="47"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SPS-9z-Jee">
+                                <rect key="frame" x="268" y="394" width="76" height="30"/>
+                                <color key="backgroundColor" red="0.4331606551166185" green="1" blue="0.42374642030840104" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Add Task"/>
+                                <connections>
+                                    <action selector="addTaskButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vnV-3a-eXP"/>
+                                </connections>
+                            </button>
+                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Text" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="SgG-Y5-sHo">
+                                <rect key="frame" x="16" y="426" width="105" height="105"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.9376409471649485" green="0.80701130399156773" blue="0.54515820554527206" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
                         <constraints>
+                            <constraint firstItem="yr4-Dh-Cad" firstAttribute="centerX" secondItem="c0C-vS-CQH" secondAttribute="centerX" id="5tn-D3-s3H"/>
+                            <constraint firstItem="yr4-Dh-Cad" firstAttribute="top" secondItem="c0C-vS-CQH" secondAttribute="bottom" constant="30" id="6a2-a8-0Is"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cqX-m8-5Wu" secondAttribute="trailing" constant="82" id="8a5-3Q-oED"/>
+                            <constraint firstItem="cqX-m8-5Wu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="105" id="HUn-wk-vLp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cqX-m8-5Wu" secondAttribute="bottom" constant="424" id="Hjx-QT-txj"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="c0C-vS-CQH" secondAttribute="trailing" constant="72" id="Kqt-nX-3Gz"/>
                             <constraint firstItem="c0C-vS-CQH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="72" id="Ms9-nT-sxd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SPS-9z-Jee" secondAttribute="trailing" constant="46" id="OgI-O4-1KT"/>
+                            <constraint firstItem="yr4-Dh-Cad" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="46" id="cNR-SL-CbK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="yr4-Dh-Cad" secondAttribute="bottom" constant="533" id="h7e-TZ-fk3"/>
                             <constraint firstItem="c0C-vS-CQH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="27" id="jrM-CS-s2Q"/>
+                            <constraint firstItem="SPS-9z-Jee" firstAttribute="top" secondItem="cqX-m8-5Wu" secondAttribute="bottom" constant="8" symbolic="YES" id="omx-Iq-0VB"/>
+                            <constraint firstItem="SPS-9z-Jee" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="268" id="sDY-hB-hl4"/>
+                            <constraint firstItem="cqX-m8-5Wu" firstAttribute="top" secondItem="yr4-Dh-Cad" secondAttribute="bottom" constant="62" id="vrn-nS-RWe"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="SVr-DA-x1m"/>
                     <connections>
+                        <outlet property="almostButton" destination="wp6-WM-1ax" id="4VK-Hf-VSw"/>
+                        <outlet property="dailyTaskBox" destination="SgG-Y5-sHo" id="UgU-BY-8RK"/>
+                        <outlet property="dnfButton" destination="sRU-tT-hm0" id="e5g-NA-OVw"/>
+                        <outlet property="finButton" destination="cPj-2u-KGt" id="A8N-KM-HGw"/>
                         <outlet property="mainTaskTextView" destination="hD7-qG-5V1" id="r4J-eC-jHC"/>
                     </connections>
                 </viewController>
@@ -54,6 +136,15 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
